@@ -1,0 +1,8 @@
+Country,City,ZIP Codes
+IN,New Delhi Central,110001
+IN,New Delhi Central,110002
+IN,New Delhi Central,*
+IN,*,110003
+IN,*,110004
+IN,Ahmedabad,110005
+US,California,12345

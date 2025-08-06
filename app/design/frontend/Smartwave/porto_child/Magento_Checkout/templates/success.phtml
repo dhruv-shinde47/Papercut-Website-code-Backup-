@@ -1,0 +1,44 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+?>
+<?php /** @var $block \Magento\Checkout\Block\Onepage\Success */ ?>
+<div class="d-flex h-100 w-100 justify-content-center align-items-center mb-5">
+    <div class="w-50 text-center">
+        <div class="usp_box mb-4">
+            <img src="https://provokebranding.com/pcf/pub/media/wysiwyg/thank-u.jpg" alt="Thank You">
+        </div>
+            <h1 class="page-title mb-5">
+                <span class="base">Thank you for your order</span>
+            </h1>
+			<div class="checkout-success">
+				<?php if ($block->getOrderId()) :?>
+				<?php if ($block->getCanViewOrder()) :?>
+				<p><?= $block->escapeHtml(__('Your order number is: %1.', sprintf('<a href="%s" class="order-number"><strong>%s</strong></a>', $block->escapeUrl($block->getViewOrderUrl()), $block->getOrderId())), ['a', 'strong']) ?></p>
+				<?php  else :?>
+				<p><?= $block->escapeHtml(__('Your order # is: <span>%1</span>.', $block->getOrderId()), ['span']) ?></p>
+				<?php endif;?>
+				<p><?= $block->escapeHtml(__('We\'ll email you an order confirmation with details and tracking info.')) ?></p>
+				<?php endif;?>
+
+					<?= $block->getAdditionalInfoHtml() ?>
+
+			</div>
+
+                    <div class="text-center btn-new py-4">
+                        <a href="<?= $block->escapeUrl($block->getViewOrderUrl())?>" class="btn arrow_btn">
+                            <img src="https://provokebranding.com/pcf/pub/media/wysiwyg/arrow.png" alt="">
+                            Check your order</a>
+                        <a href="<?= $block->escapeUrl($block->getContinueUrl()) ?>" class="btn arrow_btn">
+                            <img src="https://provokebranding.com/pcf/pub/media/wysiwyg/arrow.png" alt="">
+                            Continue Shopping</a>
+
+                    </div>
+                </div>
+</div>
+
+
+

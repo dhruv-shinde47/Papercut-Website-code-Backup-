@@ -1,0 +1,11 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+?>
+<?php $_option = $block->getOption() ?>
+<?php $id = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $block->escapeHtml($_option->getTitle())))); ?>
+<div class="field  <?= $id ?>">
+    <label class="label"><span><?= $block->escapeHtml($_option->getTitle()) ?></span></label>
+</div>

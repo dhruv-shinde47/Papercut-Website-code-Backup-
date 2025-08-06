@@ -1,0 +1,109 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block Magento\Catalog\Block\Product\View */
+?>
+<?php
+$required = '';
+if ($block->hasRequiredOptions()) {
+    $required = ' data-hasrequired="' . $block->escapeHtmlAttr(__('* Required Fields')) . '"';
+}
+?>
+<style>
+        #hidden_div {
+            display: block;
+        }
+    </style>
+<div class="product-options-wrapper" id="product-options-wrapper"<?= /* @noEscape */ $required ?>>
+    <div class="fieldset" tabindex="0">
+        <?= $block->getChildHtml('', true) ?>
+    </div>
+    <script type="text/javascript">
+    require([
+        'jquery'
+        ], function ($) {
+            $(window).load(function(){
+                
+                $('.upload-artwork').hide();
+                
+                $(document).on('change', '.design select', function(){
+                    var select_type = $(this).children("option:selected").html();
+                    console.log(select_type);
+                    // if(select_type != '-- Please Select --' &&( select_type != 'I need design assistance +QAR 100.00' || select_type != 'I need design assistance +QAR 50.00')){
+                        if(select_type== "I have a design" ){
+                            
+                    //    console.log("i am testing");
+                        $('.upload-artwork').show();
+                    } else {
+                        console.log("i am test");
+                        $('.upload-artwork').hide();
+                    }
+                    var str2 = '4 Color';
+                    if(select_type.indexOf(str2) != -1){
+                        $( ".quantity select option" ).each(function( index ) {
+                            if($(this).html() != '2000'){
+                                $(this).hide();
+                            } else {
+                                $(this).show();
+                            }
+                        });
+                    } else {
+                        $( ".quantity select option" ).show();
+                    }
+                });
+                        
+            }); 
+        });
+    </script>
+    <!-- <script>
+        var divElement = document.querySelector('.design');
+
+
+        divElement.id = 'hidden_div';
+
+        document.getElementById('select_1057').addEventListener('change', function () {
+            var style = this.value == 3188 ? 'block' : 'none';
+
+            document.getElementById('hidden_div').style.display = style;
+        });
+    </script> -->
+     <script>
+        var printing = document.querySelector('.product-custom-option');
+        printing.id = 'print';
+
+        var divElement1 = document.querySelector('.design');
+        divElement1.id = 'hidden_div';
+
+        var divElement2 = document.querySelector('.upload-artwork');
+        divElement2.id = 'd-hidden';
+
+        // Get references to the select and div elements
+        const selectElement = document.getElementById('print');
+        const divElement = document.getElementById('hidden_div');
+
+        // Add an event listener to the select element
+        selectElement.addEventListener('change', function () {
+            // Check the selected option
+            const selectedOption = selectElement.options[selectElement.selectedIndex].text;
+
+            // Use the selected option text to determine whether to hide or show the div
+            if (selectedOption === 'Plain') {
+                divElement.style.display = 'none';
+                divElement2.style.display = 'none';// Hide the div
+            } else if (selectedOption === 'Plain Pages') {
+                divElement.style.display = 'none'; // Hide the div
+                divElement2.style.display = 'none';// Hide the div
+            } else if (selectedOption === 'Plain Cover') {
+                divElement.style.display = 'none'; // Hide the div
+                divElement2.style.display = 'none';// Hide the div
+            } else {
+                divElement.style.display = 'block'; // Show the div
+              
+               
+            }
+        });
+    </script>
+</div>

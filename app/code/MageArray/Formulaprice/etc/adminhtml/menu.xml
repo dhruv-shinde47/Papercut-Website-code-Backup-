@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="MageArray_Core::core" title="MageArray Extensions" module="MageArray_Formulaprice" sortOrder="80"
+                resource="MageArray_Formulaprice::formulaprice"/>
+
+        <add id="MageArray_Formulaprice::formulaprice" title="Formula Price" module="MageArray_Formulaprice"
+             sortOrder="30" parent="MageArray_Core::core" dependsOnModule="MageArray_Formulaprice"
+             resource="MageArray_Core::core"/>
+
+        <add id="MageArray_Formulaprice::settings" title="Settings" module="MageArray_Formulaprice" sortOrder="50"
+             resource="MageArray_Formulaprice::settings" action="adminhtml/system_config/edit/section/formulaprice"
+             parent="MageArray_Formulaprice::formulaprice"/>
+    </menu>
+</config>

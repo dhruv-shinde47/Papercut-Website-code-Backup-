@@ -1,0 +1,33 @@
+MageArray_Formulaprice
+
+-------------
+  CHANGELOG
+-------------
+
+===== 1.0.0 =====
+ * Initial stable M2 release
+
+===== 1.0.1 =====
+ * Bug Fixes
+ 
+===== 1.0.2 =====
+ * formula pricing with API
+ 
+===== 1.0.3 =====
+ * Bug Fixes
+ 
+===== 1.0.4 =====
+ * Bug Fixes
+ * Magento 2.2 Compatibility
+
+===== 1.0.5 =====
+ * Bug Fixes
+ * New Features
+
+ ===== 1.0.6 =====
+ * Bug Fixes
+ * Magento 2.3 Compatibility
+ 
+ ===== 1.0.7 =====
+ * Bug Fixes
+ * Magento 2.3.4 Compatibility

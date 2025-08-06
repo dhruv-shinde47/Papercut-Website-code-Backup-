@@ -1,0 +1,146 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block Magento\Catalog\Block\Product\View */
+?>
+<?php
+$required = '';
+if ($block->hasRequiredOptions()) {
+    $required = ' data-hasrequired="' . $block->escapeHtmlAttr(__('* Required Fields')) . '"';
+}
+?>
+<style>
+        #hidden_div {
+            display: block;
+        }
+        .d-hidden{
+            display:none
+        }
+    </style>
+<div class="product-options-wrapper" id="product-options-wrapper"<?= /* @noEscape */ $required ?>>
+    <div class="fieldset" tabindex="0">
+        <?= $block->getChildHtml('', true) ?>
+    </div>
+    <script type="text/javascript">
+    require([
+        'jquery'
+        ], function ($) {
+            $(window).load(function(){
+                
+                $('.upload-artwork').hide();
+                
+                $(document).on('change', '.design select', function(){
+                    var select_type = $(this).children("option:selected").html();
+                    console.log(select_type);
+                    // if(select_type != '-- Please Select --' &&( select_type != 'I need design assistance +QAR 100.00' || select_type != 'I need design assistance +QAR 50.00')){
+                        if(select_type== "I have a design" ){
+                            
+                    //    console.log("i am testing");
+                        $('.upload-artwork').show();
+                    } else {
+                        console.log("i am test");
+                        $('.upload-artwork').hide();
+                    }
+                    var str2 = '4 Color';
+                    if(select_type.indexOf(str2) != -1){
+                        $( ".quantity select option" ).each(function( index ) {
+                            if($(this).html() != '2000'){
+                                $(this).hide();
+                            } else {
+                                $(this).show();
+                            }
+                        });
+                    } else {
+                        $( ".quantity select option" ).show();
+                    }
+                });
+                        
+            }); 
+        });
+    </script>
+
+<script type="text/javascript">
+       // id set in print
+       let parentDiv1 = document.querySelector('.field.required.printing');
+        if (parentDiv1) {
+            let selectElement1 = parentDiv1.querySelector('select');
+            if (selectElement1) {
+                selectElement1.classList.add ('printings');
+            }
+        }
+
+
+        // id set in design
+        let parentDiv2 = document.querySelector('.field.design');
+        if (parentDiv2) {
+            let selectElement2 = parentDiv2.querySelector('select');
+            if (selectElement2) {
+                selectElement2.classList.add ('designed');
+            }
+        }
+
+
+        var divElement1 = document.querySelector('.design');
+        divElement1.id = 'hidden_div';
+
+        var divElement2 = document.querySelector('.upload-artwork');
+        divElement2.id = 'd-hidden';
+
+        // Get references to the select and div elements
+        const selectElement = document.querySelector('.printings');
+        const divElement = document.querySelector('#hidden_div');
+
+        // Add an event listener to the select element
+        selectElement.addEventListener('change', function () {
+            // Check the selected option
+            const selectedOption1 = selectElement.options[selectElement.selectedIndex].text;
+
+            // Use the selected option text to determine whether to hide or show the div
+            if (selectedOption1 === 'Plain') {
+                divElement.style.display = 'none';
+                divElement2.style.display = 'none';// Hide the div
+            } else if (selectedOption1 === 'Plain Pages') {
+                divElement.style.display = 'none'; // Hide the div
+                divElement2.style.display = 'none';
+            } else if (selectedOption1 === 'Plain Cover') {
+                divElement.style.display = 'none'; // Hide the div
+                 divElement2.style.display = 'none';
+            } else {
+                divElement.style.display = 'block'; // Show the div
+                divElement2.style.display = 'block';
+            }
+
+            
+            if (selectedOption1 !=='Plain') {
+             
+                divElement2.style.display = 'none';// Hide the div
+            } else {
+                
+            }
+        });
+    </script>
+
+     
+    <script type="text/javascript">
+        var printing = document.querySelector('.printings'); // Change to the appropriate class selector
+        var design = document.querySelector('.designed'); // Change to the appropriate class selector
+
+        printing.addEventListener("change", function () {
+            var selectedOptionText = printing.options[printing.selectedIndex].text.trim();
+
+            if (selectedOptionText !== "Plain") {
+                design.options[0].selected = true; // Select the first option in the "design" select
+            }
+        });
+
+
+    </script>   
+     <script>
+    //  document.querySelector('.delivery .fas').setAttribute("class", "fas fa-shipping-fast");
+    //   document.querySelector('.design .fas').setAttribute("class", "fas fa-object-ungroup");
+
+    </script>
+</div>

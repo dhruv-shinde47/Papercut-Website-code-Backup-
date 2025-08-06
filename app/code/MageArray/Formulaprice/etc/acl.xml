@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+				<resource id="MageArray_Core::core" title="MageArray Extensions" sortOrder="80">						
+						<resource id="MageArray_Formulaprice::formulaprice" title="Manage Formula Price" translate="title" sortOrder="11"/>
+						<resource id="MageArray_Formulaprice::settings" title="Settings" translate="title" sortOrder="15"/>
+	            </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="MageArray_Formulaprice::config_formulaprice" title="Formula Price"
+                                      sortOrder="81"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

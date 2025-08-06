@@ -1,0 +1,31 @@
+"Location Information Manager","Location Information Manager"
+Save,Save
+"Save and Continue Edit","Save and Continue Edit"
+"Edit Location '%1'","Edit Location '%1'"
+"New Location","New Location"
+"Location Information","Location Information"
+Country,Country
+City,City
+"Zip Code","Zip Code"
+"Edit Location Information","Edit Location Information"
+"Restrict Order","Restrict Order"
+"Allowed Location","Allowed Location"
+"This Restriction is no longer exists.","This Restriction is no longer exists."
+"Edit Location","Edit Location"
+Restriction,Restriction
+"Allowed Locations","Allowed Locations"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"Something went wrong !","Something went wrong !"
+"Restriction Saved Successfully.","Restriction Saved Successfully."
+"Something went wrong while saving the restriction data.","Something went wrong while saving the restriction data."
+"The uploaded file is empty.","The uploaded file is empty."
+"Please Upload Correct CSV File Format.","Please Upload Correct CSV File Format."
+Edit,Edit
+Delete,Delete
+"Delete Location","Delete Location"
+"Are you sure you want to delete this location?","Are you sure you want to delete this location?"
+"Apply Group Filter","Apply Group Filter"
+"Select Customer Groups","Select Customer Groups"
+"Import CSV","Import CSV"
+"Delete items","Delete items"
+"Delete selected items?","Delete selected items?"

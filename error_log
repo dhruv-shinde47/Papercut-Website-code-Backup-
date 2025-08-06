@@ -1,0 +1,21 @@
+[23-Feb-2021 11:56:16 UTC] PHP Fatal error:  Uncaught Error: Class 'Magento\Framework\App\Config\Initial\Reader\Proxy' not found in /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php:121
+Stack trace:
+#0 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(108): Magento\Framework\ObjectManager\Factory\AbstractFactory->createObject('Magento\\Framewo...', Array)
+#1 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(150): Magento\Framework\ObjectManager\Factory\Compiled->create('Magento\\Framewo...')
+#2 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(79): Magento\Framework\ObjectManager\Factory\Compiled->get('Magento\\Framewo...')
+#3 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(150): Magento\Framework\ObjectManager\Factory\Compiled->create('Magento\\Framewo...')
+#4 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(79): Magento\Fra in /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121
+[23-Feb-2021 11:56:41 UTC] PHP Fatal error:  Uncaught Error: Class 'Magento\Framework\App\Config\Initial\Reader\Proxy' not found in /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php:121
+Stack trace:
+#0 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(108): Magento\Framework\ObjectManager\Factory\AbstractFactory->createObject('Magento\\Framewo...', Array)
+#1 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(150): Magento\Framework\ObjectManager\Factory\Compiled->create('Magento\\Framewo...')
+#2 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(79): Magento\Framework\ObjectManager\Factory\Compiled->get('Magento\\Framewo...')
+#3 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(150): Magento\Framework\ObjectManager\Factory\Compiled->create('Magento\\Framewo...')
+#4 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(79): Magento\Fra in /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121
+[23-Feb-2021 11:57:58 UTC] PHP Fatal error:  Uncaught Error: Class 'Magento\Framework\App\Config\Initial\Reader\Proxy' not found in /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php:121
+Stack trace:
+#0 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(108): Magento\Framework\ObjectManager\Factory\AbstractFactory->createObject('Magento\\Framewo...', Array)
+#1 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(150): Magento\Framework\ObjectManager\Factory\Compiled->create('Magento\\Framewo...')
+#2 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(79): Magento\Framework\ObjectManager\Factory\Compiled->get('Magento\\Framewo...')
+#3 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(150): Magento\Framework\ObjectManager\Factory\Compiled->create('Magento\\Framewo...')
+#4 /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/Compiled.php(79): Magento\Fra in /home/thepapq5/public_html/vendor/magento/framework/ObjectManager/Factory/AbstractFactory.php on line 121

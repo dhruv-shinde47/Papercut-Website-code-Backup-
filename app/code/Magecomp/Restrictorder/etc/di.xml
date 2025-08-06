@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<type name="Magecomp\Restrictorder\Model\ResourceModel\Restriction\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magecomp_restrictorder</argument>
+			<argument name="eventPrefix" xsi:type="string">restrictorder_restriction_listing_collection</argument>
+            <argument name="eventObject" xsi:type="string">restrictorder_restriction_listing_collection</argument>
+               <argument name="resourceModel" xsi:type="string">Magecomp\Restrictorder\Model\ResourceModel\Restriction</argument>
+        </arguments>
+    </type>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="restrictorder_restriction_listing_data_source" xsi:type="string">Magecomp\Restrictorder\Model\ResourceModel\Restriction\Grid\Collection</item>
+            </argument>
+        </arguments>
+  	</type>
+    <preference for="Magento\Ui\Model\Export\ConvertToCsv" type="Magecomp\Restrictorder\Model\Export\ConvertToCsv" />
+    <type name="Magento\Payment\Model\Checks\Composite">
+        <plugin name="magecomp_restrictorder_payment_multishipping" type="Magecomp\Restrictorder\Plugin\Composite" sortOrder="40" disabled="false"/>
+    </type>
+</config>

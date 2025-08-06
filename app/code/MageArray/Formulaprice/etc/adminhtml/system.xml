@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- Add new Tab -->
+        <tab id="magearray" translate="label" sortOrder="400" class="magearray">
+            <label>MageArray Extension </label>
+        </tab>
+        <section id="formulaprice" translate="label" type="text" sortOrder="150" showInDefault="1" showInWebsite="1"
+                 showInStore="1">
+            <label>Formula Price</label>
+            <tab>magearray</tab>
+            <!-- resource tag name which we have to defined in the acl.xml -->
+            <resource>MageArray_Formulaprice::config_formulaprice</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Formula Price</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable Extension</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="add_qty" translate="label" type="select" sortOrder="2" showInDefault="1" showInWebsite="1"
+                       showInStore="1">
+                    <label>Enable Qty Change</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

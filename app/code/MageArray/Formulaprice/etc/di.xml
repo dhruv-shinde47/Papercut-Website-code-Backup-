@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+	<type name="Magento\Catalog\Model\Product\Type\Price">
+        <plugin name="magearrya_formulaprice_plugin" type="MageArray\Formulaprice\Plugin\FormulaPricePlugin" sortOrder="15" disabled="false" />
+    </type>
+	<preference for="MageArray\Formulaprice\Api\PriceInterface" type="MageArray\Formulaprice\Model\GetFinalPrice" />
+</config>

@@ -1,0 +1,10 @@
+<?php $json = $block->getJson();?>
+<script type="text/x-magento-init">
+    {
+        "#product_addtocart_form": {
+            "MageArray_Formulaprice/js/formula": {
+                "productData": <?php /* @escapeNotVerified */ echo $json ?>
+            }
+        }
+    }
+</script>

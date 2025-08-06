@@ -1,0 +1,7 @@
+<?php
+    $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
+    if($block) {
+        $block->setBlockId('footer_top_custom');
+        echo $block->toHtml();
+    }
+?>

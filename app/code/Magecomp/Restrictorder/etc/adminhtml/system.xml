@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magecomp" translate="label" sortOrder="100" class="magecomp-logo">
+            <label><![CDATA[]]></label>
+        </tab>
+        <section id="restrictorder" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Restrict Order</label>
+            <tab>magecomp</tab>
+            <resource>Magecomp_Restrictorder::config_restrictorder</resource>
+            <group id="settings" showInDefault="1" sortOrder="1" showInWebsite="1" showInStore="1">
+                <label>Configuration</label>
+                <field id="enable" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Restrict Order</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="iscustomergroup" translate="label" type="select" sortOrder="20"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Apply Group Filter</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends><field id="enable">1</field></depends>
+                </field>
+                <field id="customergroup" translate="label" type="multiselect" sortOrder="30"  showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Select Customer Groups</label>
+                    <source_model>Magecomp\Restrictorder\Model\System\Groups</source_model>
+                    <comment>Select Customer Groups For Which You Want To Restrict Orders.</comment>
+                    <depends>
+                        <field id="enable">1</field>
+                        <field id="iscustomergroup">1</field>
+                    </depends>
+                </field>
+                <field id="importcsv" translate="label" type="Magecomp\Restrictorder\Block\Adminhtml\System\Config\Form\Field\Import" sortOrder="40" showInDefault="1"  showInWebsite="1" showInStore="1">
+                    <label>Import CSV</label>
+                    <backend_model>Magecomp\Restrictorder\Model\Config\Backend\Import</backend_model>
+                    <comment>Upload CSV file along with countries , cities and zipcodes for which you want to accept orders.</comment>
+                    <depends><field id="enable">1</field></depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

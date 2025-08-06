@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="magecomp::restrictbase" title="MageComp Restrict Order" module="Magecomp_Restrictorder" sortOrder="50" resource="Magecomp_Restrictorder::restrict_order"/>
+        <add id="magecomp_restrictorder::restrictorder" title="Allowed Locations" module="Magecomp_Restrictorder" sortOrder="10" parent="magecomp::restrictbase" action="restrictorder/restriction/" resource="Magecomp_Restrictorder::restriction_list"/>
+		<add id="magecomp_restrictorder::config_restrictsetting" title="Configuration" module="Magecomp_Restrictorder" sortOrder="20" parent="magecomp::restrictbase" action="adminhtml/system_config/edit/section/restrictorder" resource="Magecomp_Restrictorder::config_restriction"/>
+    </menu>
+</config>

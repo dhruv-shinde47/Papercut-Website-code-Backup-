@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="payment_method_is_active">
+     		<observer name="magecomp_restrictorder_payment_active" instance="Magecomp\Restrictorder\Observer\Ispaymentactive" />
+    </event>
+</config>

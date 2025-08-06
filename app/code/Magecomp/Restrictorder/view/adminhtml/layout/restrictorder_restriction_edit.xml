@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="restrictorder_restriction_edit"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Magecomp\Restrictorder\Block\Adminhtml\Restriction\Edit" name="restrictorder_restriction_edit"/>
+        </referenceContainer>
+		<referenceContainer name="left">
+            <block class="Magecomp\Restrictorder\Block\Adminhtml\Restriction\Edit\Tabs" name="restrictorder_restriction_edit_tabs">
+				<block class="Magecomp\Restrictorder\Block\Adminhtml\Restriction\Edit\Tab\Form" name="restrictorder_restriction_edit_tabs_form" />
+				<action method="addTab">
+                    <argument name="name" xsi:type="string">form_section</argument>
+                    <argument name="block" xsi:type="string">restrictorder_restriction_edit_tabs_form</argument>
+                </action>
+			</block>
+        </referenceContainer>
+	</body>
+</page>
